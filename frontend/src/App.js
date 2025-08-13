@@ -260,7 +260,8 @@ function App() {
       await axios.post(`${API}/funcionarios`, {
         ...funcionarioForm,
         salario: parseFloat(funcionarioForm.salario),
-        quantidade_dependentes: parseInt(funcionarioForm.quantidade_dependentes) || 0
+        quantidade_dependentes: parseInt(funcionarioForm.quantidade_dependentes) || 0,
+        tem_dependentes: funcionarioForm.tem_dependentes
       });
       setFuncionarioForm({
         nome: "",
