@@ -421,7 +421,12 @@ async def get_atestados():
 async def create_licenca(licenca: LicencaCreate):
     try:
         licenca_obj = Licenca(**licenca.dict())
-        await db.licencas.insert_one(licenca_obj.dict())
+        # Convert date objects to strings for MongoDB storage
+        licenca_dict = licenca_obj.dict()
+        for key, value in licenca_dict.items():
+            if isinstance(value, date):
+                licenca_dict[key] = value.isoformat()
+        await db.licencas.insert_one(licenca_dict)
         return licenca_obj
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
