@@ -398,7 +398,12 @@ async def get_registros_presenca():
 async def create_atestado(atestado: AtestadoCreate):
     try:
         atestado_obj = Atestado(**atestado.dict())
-        await db.atestados.insert_one(atestado_obj.dict())
+        # Convert date objects to strings for MongoDB storage
+        atestado_dict = atestado_obj.dict()
+        for key, value in atestado_dict.items():
+            if isinstance(value, date):
+                atestado_dict[key] = value.isoformat()
+        await db.atestados.insert_one(atestado_dict)
         return atestado_obj
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
