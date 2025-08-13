@@ -88,7 +88,7 @@ function App() {
     empresa_id: "",
     data_admissao: "",
     tem_dependentes: false,
-    quantidade_dependentes: "",
+    quantidade_dependentes: 0,
     cliente_id: "",
     posto_alocacao: ""
   });
