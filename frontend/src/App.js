@@ -952,6 +952,214 @@ function App() {
                       </div>
                     </div>
 
+                    {/* Seção Dados Familiares */}
+                    <div className="border-t pt-4">
+                      <h3 className="text-lg font-semibold mb-4 text-gray-700">Dados Familiares</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="local_nascimento">Local de Nascimento</Label>
+                          <Input
+                            id="local_nascimento"
+                            value={funcionarioForm.local_nascimento}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, local_nascimento: e.target.value})}
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="nacionalidade">Nacionalidade</Label>
+                          <Input
+                            id="nacionalidade"
+                            value={funcionarioForm.nacionalidade}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, nacionalidade: e.target.value})}
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 mt-4">
+                        <div>
+                          <Label htmlFor="nome_pai">Nome do Pai</Label>
+                          <Input
+                            id="nome_pai"
+                            value={funcionarioForm.nome_pai}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, nome_pai: e.target.value})}
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="nome_mae">Nome da Mãe</Label>
+                          <Input
+                            id="nome_mae"
+                            value={funcionarioForm.nome_mae}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, nome_mae: e.target.value})}
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Seção Documentos */}
+                    <div className="border-t pt-4">
+                      <h3 className="text-lg font-semibold mb-4 text-gray-700">Documentos</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="data_emissao_rg">Data de Emissão do RG</Label>
+                          <Input
+                            id="data_emissao_rg"
+                            type="date"
+                            value={funcionarioForm.data_emissao_rg}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, data_emissao_rg: e.target.value})}
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="orgao_emissor_rg">Órgão Emissor do RG</Label>
+                          <Input
+                            id="orgao_emissor_rg"
+                            value={funcionarioForm.orgao_emissor_rg}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, orgao_emissor_rg: e.target.value})}
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 mt-4">
+                        <div>
+                          <Label htmlFor="ctps">CTPS</Label>
+                          <Input
+                            id="ctps"
+                            value={funcionarioForm.ctps}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, ctps: e.target.value})}
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="data_emissao_ctps">Data de Emissão da CTPS</Label>
+                          <Input
+                            id="data_emissao_ctps"
+                            type="date"
+                            value={funcionarioForm.data_emissao_ctps}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, data_emissao_ctps: e.target.value})}
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 mt-4">
+                        <div>
+                          <Label htmlFor="orgao_emissor_ctps">Órgão Emissor da CTPS</Label>
+                          <Input
+                            id="orgao_emissor_ctps"
+                            value={funcionarioForm.orgao_emissor_ctps}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, orgao_emissor_ctps: e.target.value})}
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="titulo_eleitor">Título de Eleitor</Label>
+                          <Input
+                            id="titulo_eleitor"
+                            value={funcionarioForm.titulo_eleitor}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, titulo_eleitor: e.target.value})}
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 mt-4">
+                        <div>
+                          <Label htmlFor="zona_eleitoral">Zona Eleitoral</Label>
+                          <Input
+                            id="zona_eleitoral"
+                            value={funcionarioForm.zona_eleitoral}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, zona_eleitoral: e.target.value})}
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="secao_eleitoral">Seção Eleitoral</Label>
+                          <Input
+                            id="secao_eleitoral"
+                            value={funcionarioForm.secao_eleitoral}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, secao_eleitoral: e.target.value})}
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Seção Dados Trabalhistas */}
+                    <div className="border-t pt-4">
+                      <h3 className="text-lg font-semibold mb-4 text-gray-700">Dados Trabalhistas</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="matricula_esocial">Matrícula eSocial</Label>
+                          <Input
+                            id="matricula_esocial"
+                            value={funcionarioForm.matricula_esocial}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, matricula_esocial: e.target.value})}
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="cbo">CBO</Label>
+                          <Input
+                            id="cbo"
+                            value={funcionarioForm.cbo}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, cbo: e.target.value})}
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 mt-4">
+                        <div>
+                          <Label htmlFor="numero_pis">Número PIS</Label>
+                          <Input
+                            id="numero_pis"
+                            value={funcionarioForm.numero_pis}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, numero_pis: e.target.value})}
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="horario_trabalho">Horário de Trabalho</Label>
+                          <Input
+                            id="horario_trabalho"
+                            value={funcionarioForm.horario_trabalho}
+                            onChange={(e) => setFuncionarioForm({...funcionarioForm, horario_trabalho: e.target.value})}
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Seção Dependentes */}
+                    <div className="border-t pt-4">
+                      <h3 className="text-lg font-semibold mb-4 text-gray-700">Dependentes</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="tem_dependentes">Tem Dependentes?</Label>
+                          <Select value={funcionarioForm.tem_dependentes.toString()} onValueChange={(value) => setFuncionarioForm({...funcionarioForm, tem_dependentes: value === 'true'})}>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Selecione" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="false">Não</SelectItem>
+                              <SelectItem value="true">Sim</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                        {funcionarioForm.tem_dependentes && (
+                          <div>
+                            <Label htmlFor="quantidade_dependentes">Quantidade de Dependentes</Label>
+                            <Input
+                              id="quantidade_dependentes"
+                              type="number"
+                              min="0"
+                              value={funcionarioForm.quantidade_dependentes}
+                              onChange={(e) => setFuncionarioForm({...funcionarioForm, quantidade_dependentes: parseInt(e.target.value) || 0})}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
                     <Button type="submit" className="w-full">Cadastrar Funcionário</Button>
                   </form>
                 </DialogContent>
