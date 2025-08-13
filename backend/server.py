@@ -375,7 +375,12 @@ async def get_funcionario(funcionario_id: str):
 async def create_registro_presenca(registro: RegistroPresencaCreate):
     try:
         registro_obj = RegistroPresenca(**registro.dict())
-        await db.registros_presenca.insert_one(registro_obj.dict())
+        # Convert date objects to strings for MongoDB storage
+        registro_dict = registro_obj.dict()
+        for key, value in registro_dict.items():
+            if isinstance(value, date):
+                registro_dict[key] = value.isoformat()
+        await db.registros_presenca.insert_one(registro_dict)
         return registro_obj
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
