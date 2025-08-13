@@ -342,7 +342,12 @@ async def get_funcoes():
 async def create_funcionario(funcionario: FuncionarioCreate):
     try:
         funcionario_obj = Funcionario(**funcionario.dict())
-        await db.funcionarios.insert_one(funcionario_obj.dict())
+        # Convert date objects to strings for MongoDB storage
+        funcionario_dict = funcionario_obj.dict()
+        for key, value in funcionario_dict.items():
+            if isinstance(value, date):
+                funcionario_dict[key] = value.isoformat()
+        await db.funcionarios.insert_one(funcionario_dict)
         return funcionario_obj
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
